@@ -14,6 +14,11 @@ export class AppComponent {
   constructor(private redditAPI: RedditService){
   }
 
+  ngOnInit(): void{
+    
+    this.GetTopRAwwPosts("aww");
+  }
+
   GetTopRAwwPosts(name:string):void{
     this.redditAPI.GetRedditPost(name).subscribe((result:Reddit) => {
       for(let i = 0; i < 10; i++){

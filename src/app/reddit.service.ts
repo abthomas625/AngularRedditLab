@@ -12,6 +12,6 @@ export class RedditService {
   constructor(private http: HttpClient) { }
 
   GetRedditPost(name: string) : Observable<Reddit>{
-    return this.http.get<Reddit>(this.baseURL + name);
+    return this.http.get<Reddit>(this.baseURL + name + ".json");
   }
 }
